@@ -26,6 +26,11 @@ float a = millis();
 float c;
 
 void loop() {
+  minutes = 0;
+  seconds = 0;
+  mil = 0;
+  time = 0;
+  sub = 0;
   lcd.clear();
   lcd.print("press start");
   delay(100);

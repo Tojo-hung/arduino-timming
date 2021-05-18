@@ -57,7 +57,9 @@ void loop() {
         minutes++;
       }
 
-
+      if (minutes < 10){
+        lcd.print("0");
+      }
       lcd.print(minutes);
       lcd.print(":");
       if (seconds < 10){
@@ -72,6 +74,9 @@ void loop() {
 
     if (digitalRead(9) == LOW) {
       while (digitalRead(8) == HIGH) {
+        if (minutes < 10){
+          lcd.print("0");
+        }
         lcd.print(minutes);
         lcd.print(":");
         if (seconds < 10){

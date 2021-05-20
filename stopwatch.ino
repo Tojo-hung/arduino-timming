@@ -44,6 +44,7 @@ void loop() {
   sub = 0;
   lcd.clear();
   lcd.print("press start/read");
+  delay(250);
   if (digitalRead(11) == LOW) {
     while (digitalRead(8) == HIGH) {
       Savetime customVar;
@@ -61,6 +62,7 @@ void loop() {
         lcd.print("0");
       }
       lcd.print(customVar.secondsS);
+      delay(100);
     }
   }
 
@@ -108,6 +110,7 @@ void loop() {
         lcd.print(seconds);
         lcd.setCursor(0, 1);
         lcd.print("Save, Yes or NO: ");
+        delay(100);
         if (digitalRead(10) == LOW) {
           while (digitalRead(8) == HIGH){
             lcd.clear();
@@ -123,12 +126,13 @@ void loop() {
               lcd.print("0");
             }
             lcd.print(seconds);
-            Savetime customVar = {
+            delay(100);
+          }
+          Savetime customVar = {
               minutes,
               seconds,
             };
-            EEPROM.put(eeAddress, customVar);
-          }
+          EEPROM.put(eeAddress, customVar);
         }
       }
     }
